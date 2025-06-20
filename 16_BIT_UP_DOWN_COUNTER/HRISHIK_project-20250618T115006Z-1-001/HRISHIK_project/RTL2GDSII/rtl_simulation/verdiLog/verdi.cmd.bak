@@ -1,0 +1,48 @@
+simSetSimulator "-vcssv" -exec \
+           "/home/student/HRISHIK_project/RTL2GDSII/rtl_simulation/simv" -args \
+           "Verdi"
+debImport "-dbdir" \
+          "/home/student/HRISHIK_project/RTL2GDSII/rtl_simulation/simv.daidir"
+debLoadSimResult \
+           /home/student/HRISHIK_project/RTL2GDSII/rtl_simulation/novas.fsdb
+wvCreateWindow
+verdiSetActWin -win $_nWave2
+verdiWindowResize -win $_Verdi_1 "233" "27" "900" "700"
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {8 13 2 1 1 1}
+wvSelectGroup -win $_nWave2 {G1}
+verdiSetActWin -win $_nWave2
+wvSelectGroup -win $_nWave2 {G1}
+wvAddSignal -win $_nWave2 "/up_down_counter_16bit_tb/Clock" \
+           "/up_down_counter_16bit_tb/Reset" \
+           "/up_down_counter_16bit_tb/Enable" \
+           "/up_down_counter_16bit_tb/Up_Down"
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcSetScope "up_down_counter_16bit_tb" -delim "." -win $_nTrace1
+srcHBSelect "up_down_counter_16bit_tb" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "up_down_counter_16bit_tb" -win $_nTrace1
+srcHBSelect "up_down_counter_16bit_tb.uut" -win $_nTrace1
+srcSetScope "up_down_counter_16bit_tb.uut" -delim "." -win $_nTrace1
+srcHBSelect "up_down_counter_16bit_tb.uut" -win $_nTrace1
+schCreateWindow -delim "." -win $_nSchema1 -scope "up_down_counter_16bit_tb.uut"
+verdiSetActWin -win $_nSchema_3
+wvSetPosition -win $_nWave2 {("G1" 3)}
+verdiSetActWin -win $_nWave2
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+debExit

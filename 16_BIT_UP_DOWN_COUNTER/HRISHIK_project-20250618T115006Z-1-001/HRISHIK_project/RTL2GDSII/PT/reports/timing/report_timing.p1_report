@@ -1,0 +1,99 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min_max
+	-nosplit
+	-input_pins
+	-nets
+	-slack_lesser_than 0.000000
+	-max_paths 1
+	-sort_by slack
+Design : up_down_counter_16bit
+Version: W-2024.09
+Date   : Tue Jun  3 14:07:13 2025
+****************************************
+
+No paths with slack less than 0.000000.
+
+
+  Startpoint: Up_Down (input port clocked by Clock)
+  Endpoint: Count_reg[15] (rising edge-triggered flip-flop clocked by Clock)
+  Path Group: Clock
+  Path Type: max
+
+  Point                              Fanout       Incr       Path
+  ----------------------------------------------------------------------
+  clock Clock (rise edge)                     0.000000   0.000000
+  clock network delay (ideal)                 0.000000   0.000000
+  input external delay                        0.500000   0.500000 r
+  Up_Down (in)                                0.000000 & 0.500000 r
+  Up_Down (net)                         1 
+  HFSINV_556_1/A (IBUFFX8_RVT)                0.000007 & 0.500007 r
+  HFSINV_556_1/Y (IBUFFX8_RVT)                0.610542 & 1.110549 f
+  HFSNET_1 (net)                       15 
+  U65/B (FADDX1_RVT)                          0.000753 & 1.111302 f
+  U65/CO (FADDX1_RVT)                         0.560245 & 1.671547 f
+  n58 (net)                             1 
+  U63/CI (FADDX1_RVT)                         0.000016 & 1.671563 f
+  U63/CO (FADDX1_RVT)                         0.628070 & 2.299633 f
+  n55 (net)                             1 
+  U61/CI (FADDX1_RVT)                         0.000012 & 2.299645 f
+  U61/CO (FADDX1_RVT)                         0.626311 & 2.925957 f
+  n53 (net)                             1 
+  U59/CI (FADDX1_RVT)                         0.000012 & 2.925969 f
+  U59/CO (FADDX1_RVT)                         0.624903 & 3.550871 f
+  n51 (net)                             1 
+  U57/CI (FADDX1_RVT)                         0.000012 & 3.550883 f
+  U57/CO (FADDX1_RVT)                         0.612083 & 4.162966 f
+  n49 (net)                             1 
+  U55/CI (FADDX1_RVT)                         0.000006 & 4.162972 f
+  U55/CO (FADDX1_RVT)                         0.609929 & 4.772901 f
+  n47 (net)                             1 
+  U53/CI (FADDX1_RVT)                         0.000004 & 4.772905 f
+  U53/CO (FADDX1_RVT)                         0.614520 & 5.387424 f
+  n45 (net)                             1 
+  U51/CI (FADDX1_RVT)                         0.000006 & 5.387431 f
+  U51/CO (FADDX1_RVT)                         0.627226 & 6.014657 f
+  n43 (net)                             1 
+  U49/CI (FADDX1_RVT)                         0.000015 & 6.014672 f
+  U49/CO (FADDX1_RVT)                         0.641853 & 6.656525 f
+  n41 (net)                             1 
+  U47/CI (FADDX1_RVT)                         0.000018 & 6.656543 f
+  U47/CO (FADDX1_RVT)                         0.624812 & 7.281355 f
+  n39 (net)                             1 
+  U45/CI (FADDX1_RVT)                         0.000009 & 7.281363 f
+  U45/CO (FADDX1_RVT)                         0.617785 & 7.899149 f
+  n37 (net)                             1 
+  U43/CI (FADDX1_RVT)                         0.000008 & 7.899157 f
+  U43/CO (FADDX1_RVT)                         0.618899 & 8.518056 f
+  n35 (net)                             1 
+  U41/CI (FADDX1_RVT)                         0.000009 & 8.518064 f
+  U41/CO (FADDX1_RVT)                         0.620647 & 9.138712 f
+  n33 (net)                             1 
+  U39/CI (FADDX1_RVT)                         0.000010 & 9.138722 f
+  U39/CO (FADDX1_RVT)                         0.615375 & 9.754097 f
+  n30 (net)                             2 
+  ctmTdsLR_1_1115/A2 (OA21X1_RVT)             0.000008 & 9.754105 f
+  ctmTdsLR_1_1115/Y (OA21X1_RVT)              0.500539 & 10.254643 f
+  n31 (net)                             1 
+  U38/A4 (AO22X1_RVT)                         0.000003 & 10.254646 f
+  U38/Y (AO22X1_RVT)                          0.373755 & 10.628401 f
+  n4 (net)                              1 
+  Count_reg[15]/D (DFFX1_RVT)                 0.000010 & 10.628410 f
+  data arrival time                                      10.628410
+
+  clock Clock (rise edge)                     4.000000   4.000000
+  clock network delay (ideal)                 0.000000   4.000000
+  Count_reg[15]/CLK (DFFX1_RVT)                          4.000000 r
+  clock reconvergence pessimism               0.000000   4.000000
+  clock uncertainty                           -0.300000  3.700000
+  library setup time                          -0.563591  3.136409
+  data required time                                     3.136409
+  ----------------------------------------------------------------------
+  data required time                                     3.136409
+  data arrival time                                      -10.628410
+  ----------------------------------------------------------------------
+  slack (VIOLATED)                                       -7.492002
+
+
+1
